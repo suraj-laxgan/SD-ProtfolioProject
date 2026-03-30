@@ -68,18 +68,18 @@
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
             <!-- Menu or sidebar -->
-            @include('layouts.admin.menu')
+            @include('layout.admin.menu')
             <!-- Navbar -->
             <div class="layout-page">
-                @include('layouts.admin.navigation')
+                @include('layout.admin.navigation')
                 <div class="content-wrapper">
                     <!-- Main Content -->
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        @include('layouts.admin.alerts')
+                        @include('layout.admin.alerts')
                         @yield('content')
                     </div>
                     <!-- Footer -->
-                    @include('layouts.admin.footer')
+                    @include('layout.admin.footer')
                 </div>
             </div>
         </div>

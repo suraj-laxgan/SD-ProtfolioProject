@@ -38,13 +38,13 @@
                          <div>My Account</div>
                      </a>
                  </li>
-                 <li class="menu-item {{ request()->routeIs('profile.notification') ? 'active' : '' }}">
-                     <a href="{{ route('profile.notification') }}" class="menu-link">
+                 <li class="menu-item {{ request()->routeIs('#') ? 'active' : '' }}">
+                     <a href="{{ url('#') }}" class="menu-link">
                          <div data-i18n="Notifications">Notifications</div>
                      </a>
                  </li>
-                 <li class="menu-item {{ request()->routeIs('profile.connection') ? 'active' : '' }}">
-                     <a href="{{ route('profile.connection') }}" class="menu-link">
+                 <li class="menu-item {{ request()->routeIs('#') ? 'active' : '' }}">
+                     <a href="{{ url('#') }}" class="menu-link">
                          <div data-i18n="Connections">Connections</div>
                      </a>
                  </li>
