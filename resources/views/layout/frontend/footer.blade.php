@@ -2,7 +2,7 @@
 
     <div class="container">
         <div class="copyright text-center ">
-            <p>© <span>Copyright</span> <strong class="px-1 sitename">EasyFolio</strong> <span>All Rights
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">Suraj</strong> <span>All Rights
                     Reserved</span></p>
         </div>
         <div class="social-links d-flex justify-content-center">

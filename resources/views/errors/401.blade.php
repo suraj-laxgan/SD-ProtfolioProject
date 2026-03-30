@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layout.admin.app')
 @section('title', 'Maintences')
 @section('meta_description', 'Maintences')
 @section('meta_keywords', 'Maintences')

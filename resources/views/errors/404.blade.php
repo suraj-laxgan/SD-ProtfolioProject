@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layout.admin.app')
 @section('title', 'Profile | SD')
 @section('meta_description', 'SD Dashboard home')
 @section('meta_keywords', 'SD Dashboard home.')

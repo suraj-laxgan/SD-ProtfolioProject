@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('slug')->unique(); 
             $table->text('description')->nullable();
             $table->unsignedBigInteger('technology_id');
+            $table->unsignedBigInteger('category_id');
             $table->string('github_link')->nullable();
             $table->string('live_url')->nullable();
             $table->string('thumbnail')->nullable(); 
@@ -24,6 +25,8 @@ return new class extends Migration
             $table->string('status')->default('draft');
             $table->timestamps();
             $table->foreign('technology_id')->references('id')->on('project_technologies')->constrained()->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('project_categories')->constrained()->onDelete('cascade');
+
 
         });
     }
