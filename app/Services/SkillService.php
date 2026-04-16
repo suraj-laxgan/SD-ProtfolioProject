@@ -20,8 +20,9 @@ class SkillService
     }
 
 
-    public function FindById(int $id)
+    public function FindById($encryptedId)
     {
+        $id = decrypt($encryptedId);
         return $this->skillRepo->FindById($id);
     }
 

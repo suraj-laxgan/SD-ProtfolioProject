@@ -28,12 +28,9 @@ class SkillRepository implements SkillRepositoryInterface
 
     public function FindList()
     {
-        $skill = $this->skill->get();
-        if (COUNT($skill) >= 1) {
-           return $skill ;
-        }else{
-            return back()->withErrors(['message' => 'No data found.']);
-        }
+        $skill = $this->skill->with('skillCategory')->paginate(10);
+        return $skill ;
+       
     }
 
     public function update(int $id, array $data)

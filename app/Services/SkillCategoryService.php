@@ -26,17 +26,19 @@ class SkillCategoryService
         return $this->categoryRepo->FindById($id);
     }
 
-     public function FindList()
+    public function FindList()
     {
         return $this->categoryRepo->FindList();
     }
+    public function findCategory()
+    {
+        return $this->categoryRepo->findCategory();
+    }
+    
 
-    public function Update($category, array $data){
+    public function Update($category, array $data)
+    {
         $category = $this->categoryRepo->update($category, $data);
         return $category;
     }
-
-
-
-   
 }

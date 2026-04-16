@@ -55,14 +55,14 @@
              <ul class="menu-sub">
                  <li class="menu-item {{ request()->routeIs('skill_category.*') ? 'active' : '' }}">
                      <a href="{{ route('skill_category.index') }}" class="menu-link">
-                         <div>Skills Category</div>
+                         <div>Category</div>
                      </a>
                  </li>
              </ul>
                <ul class="menu-sub">
                  <li class="menu-item {{ request()->routeIs('skill.*') ? 'active' : '' }}">
                      <a href="{{ route('skill.index') }}" class="menu-link">
-                         <div>Skills List</div>
+                         <div>List</div>
                      </a>
                  </li>
              </ul>

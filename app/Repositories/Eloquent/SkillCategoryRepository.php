@@ -20,9 +20,6 @@ class SkillCategoryRepository implements SkillCategoryRepositoryInterface
     public function findById(int $id)
     {
         $this->skillCategory = $this->skillCategory->where('id', $id)->first();
-        if (!$this->skillCategory) {
-            return back()->withErrors(['email' => 'Skill not found.']);
-        }
         return $this->skillCategory;
     }
 
@@ -30,6 +27,12 @@ class SkillCategoryRepository implements SkillCategoryRepositoryInterface
     {
         // $skillCategory = $this->skillCategory->get();
         $skillCategory = $this->skillCategory->paginate(10);
+        return $skillCategory ;
+    }
+
+     public function findCategory()
+    {
+        $skillCategory = $this->skillCategory->select('id','name')->get();
         return $skillCategory ;
     }
 
