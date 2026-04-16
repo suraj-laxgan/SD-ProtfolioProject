@@ -2,11 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\skill;
+use App\Services\skillService;
 use Illuminate\Http\Request;
 
 class SkillController extends Controller
 {
+
+    protected $skillService;
+
+    public function __construct(skillService $skillService)
+    {
+        $this->skillService = $skillService;
+    }
     /**
      * Display a listing of the resource.
      */
@@ -34,7 +41,7 @@ class SkillController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(skill $skill)
+    public function show()
     {
         //
     }
@@ -42,7 +49,7 @@ class SkillController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(skill $skill)
+    public function edit()
     {
         //
     }
@@ -50,7 +57,7 @@ class SkillController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, skill $skill)
+    public function update(Request $request, )
     {
         //
     }
@@ -58,7 +65,7 @@ class SkillController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(skill $skill)
+    public function destroy()
     {
         //
     }

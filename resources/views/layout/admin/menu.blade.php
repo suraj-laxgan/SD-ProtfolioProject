@@ -29,7 +29,7 @@
          <li class="menu-item {{ request()->routeIs('wsprofile.*') ? 'active open' : '' }}">
              <a href="javascript:void(0);" class="menu-link menu-toggle">
                  <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                 <div>Profile</div>
+                 <div>Protfolio Profile</div>
              </a>
 
              <ul class="menu-sub">
@@ -47,20 +47,34 @@
                  </li>
              </ul>
          </li>
-         <li class="menu-item">
-             <a href="cards-basic.html" class="menu-link">
+         <li class="menu-item {{ request()->routeIs('skill*') ? 'active open' : '' }}">
+             <a href="javascript:void(0);" class="menu-link menu-toggle">
                  <i class="menu-icon tf-icons bx bx-collection"></i>
                  <div data-i18n="Basic">Skills</div>
              </a>
+             <ul class="menu-sub">
+                 <li class="menu-item {{ request()->routeIs('skill_category.*') ? 'active' : '' }}">
+                     <a href="{{ route('skill_category.index') }}" class="menu-link">
+                         <div>Skills Category</div>
+                     </a>
+                 </li>
+             </ul>
+               <ul class="menu-sub">
+                 <li class="menu-item {{ request()->routeIs('skill.*') ? 'active' : '' }}">
+                     <a href="{{ route('skill.index') }}" class="menu-link">
+                         <div>Skills List</div>
+                     </a>
+                 </li>
+             </ul>
          </li>
-          <li class="menu-item">
-             <a href="cards-basic.html" class="menu-link">
+          <li class="menu-item {{ request()->routeIs('exprence.*') ? 'active open' : '' }}">
+             <a href="{{ route('skill.index') }}" class="menu-link">
                  <i class="menu-icon tf-icons bx bx-collection"></i>
                  <div data-i18n="Basic">Experience</div>
              </a>
          </li>
-          <li class="menu-item">
-             <a href="cards-basic.html" class="menu-link">
+          <li class="menu-item {{ request()->routeIs('education.*') ? 'active open' : '' }}">
+             <a href="{{ route('education.index') }}" class="menu-link">
                  <i class="menu-icon tf-icons bx bx-collection"></i>
                  <div data-i18n="Basic">Education</div>
              </a>

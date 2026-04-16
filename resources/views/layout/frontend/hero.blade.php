@@ -29,7 +29,7 @@
              </div>
              <div class="col-lg-6">
                  <div class="hero-image">
-                     <img src="{{ asset('frontend/assets/img/profile/profile-1.webp') }}" alt="Portfolio Hero Image"
+                     <img src="{{ asset('frontend/assets/img/profile/profile-1.webp') }}" alt="Suraj portfolio Image"
                          class="img-fluid" data-aos="zoom-out" data-aos-delay="300">
                      <div class="shape-1"></div>
                      <div class="shape-2"></div>
