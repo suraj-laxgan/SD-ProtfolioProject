@@ -4,24 +4,25 @@
 
          <div class="row align-items-center content">
              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                 <h2>Crafting Digital Experiences with Passion</h2>
-                 <p class="lead">Transforming ideas into elegant solutions through creative design and innovative
-                     development</p>
+                 <h2>{{ $profiles->title }}</h2>
+                 <p class="lead">
+                     {{ $profiles->sub_title }}
+                 </p>
                  <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
                      <a href="#portfolio" class="btn btn-primary">View My Work</a>
                      <a href="#contact" class="btn btn-outline">Let's Connect</a>
                  </div>
                  <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
                      <div class="stat-item">
-                         <span class="stat-number">5+</span>
+                         <span class="stat-number">{{ $profiles->total_experience }}+</span>
                          <span class="stat-label">Years Experience</span>
                      </div>
                      <div class="stat-item">
-                         <span class="stat-number">100+</span>
+                         <span class="stat-number">{{ $profiles->project_completed }}+</span>
                          <span class="stat-label">Projects Completed</span>
                      </div>
                      <div class="stat-item">
-                         <span class="stat-number">50+</span>
+                         <span class="stat-number">{{ $profiles->happy_client }}+</span>
                          <span class="stat-label">Happy Clients</span>
                      </div>
                  </div>

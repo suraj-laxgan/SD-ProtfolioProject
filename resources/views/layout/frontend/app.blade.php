@@ -14,8 +14,10 @@
     <title>@yield('title', 'Suraj')</title>
 
     <!-- Favicons -->
-    <link href="{{ asset('frontend/assets/img/favicon.png') }}" rel="icon">
-    <link href="{{ asset('frontend/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+    {{-- <link href="{{ asset('frontend/assets/img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('frontend/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon"> --}}
+    <link href=" {{ asset('images/logo.png') }}" rel="icon">
+   
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">

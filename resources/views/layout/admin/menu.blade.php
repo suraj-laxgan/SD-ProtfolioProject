@@ -26,29 +26,80 @@
          <li class="menu-header small text-uppercase">
              <span class="menu-header-text">Pages</span>
          </li>
-         <li class="menu-item {{ request()->routeIs('profile.*') ? 'active open' : '' }}">
+         <li class="menu-item {{ request()->routeIs('wsprofile.*') ? 'active open' : '' }}">
              <a href="javascript:void(0);" class="menu-link menu-toggle">
                  <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                 <div>Account Settings</div>
+                 <div>Profile</div>
              </a>
 
              <ul class="menu-sub">
-                 <li class="menu-item {{ request()->routeIs('profile.edit') ? 'active' : '' }}">
-                     <a href="{{ route('profile.edit') }}" class="menu-link">
-                         <div>My Account</div>
-                     </a>
-                 </li>
-                 <li class="menu-item {{ request()->routeIs('#') ? 'active' : '' }}">
-                     <a href="{{ url('#') }}" class="menu-link">
-                         <div data-i18n="Notifications">Notifications</div>
-                     </a>
-                 </li>
-                 <li class="menu-item {{ request()->routeIs('#') ? 'active' : '' }}">
-                     <a href="{{ url('#') }}" class="menu-link">
-                         <div data-i18n="Connections">Connections</div>
+                 <li class="menu-item {{ request()->routeIs('wsprofile.list') ? 'active' : '' }}">
+                     <a href="{{ route('wsprofile.list') }}" class="menu-link">
+                         <div>List</div>
                      </a>
                  </li>
              </ul>
+             <ul class="menu-sub">
+                 <li class="menu-item {{ request()->routeIs('wsprofile.create') ? 'active' : '' }}">
+                     <a href="{{ route('wsprofile.create') }}" class="menu-link">
+                         <div>Create</div>
+                     </a>
+                 </li>
+             </ul>
+         </li>
+         <li class="menu-item">
+             <a href="cards-basic.html" class="menu-link">
+                 <i class="menu-icon tf-icons bx bx-collection"></i>
+                 <div data-i18n="Basic">Skills</div>
+             </a>
+         </li>
+          <li class="menu-item">
+             <a href="cards-basic.html" class="menu-link">
+                 <i class="menu-icon tf-icons bx bx-collection"></i>
+                 <div data-i18n="Basic">Experience</div>
+             </a>
+         </li>
+          <li class="menu-item">
+             <a href="cards-basic.html" class="menu-link">
+                 <i class="menu-icon tf-icons bx bx-collection"></i>
+                 <div data-i18n="Basic">Education</div>
+             </a>
+         </li>
+          <li class="menu-item">
+             <a href="cards-basic.html" class="menu-link">
+                 <i class="menu-icon tf-icons bx bx-collection"></i>
+                 <div data-i18n="Basic">Projects</div>
+             </a>
+         </li>
+          <li class="menu-item">
+             <a href="cards-basic.html" class="menu-link">
+                 <i class="menu-icon tf-icons bx bx-collection"></i>
+                 <div data-i18n="Basic">Blog</div>
+             </a>
+         </li>
+          <li class="menu-item">
+             <a href="cards-basic.html" class="menu-link">
+                 <i class="menu-icon tf-icons bx bx-collection"></i>
+                 <div data-i18n="Basic">API Docs</div>
+             </a>
+         </li>
+          <li class="menu-item">
+             <a href="cards-basic.html" class="menu-link">
+                 <i class="menu-icon tf-icons bx bx-collection"></i>
+                 <div data-i18n="Basic">SEO</div>
+             </a>
+         </li>
+          <li class="menu-item">
+             <a href="cards-basic.html" class="menu-link">
+                 <i class="menu-icon tf-icons bx bx-collection"></i>
+                 <div data-i18n="Basic">Messages</div>
+             </a>
+         </li>
+          <li class="menu-item">
+             <a href="cards-basic.html" class="menu-link">
+                 <i class="menu-icon tf-icons bx bx-collection"></i>
+                 <div data-i18n="Basic">Analytics</div>
+             </a>
          </li>
      </ul>
  </aside>

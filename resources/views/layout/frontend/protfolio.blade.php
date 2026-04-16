@@ -28,7 +28,7 @@
 
                  <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
 
-                     <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-web">
+                     <div class="col-lg-3 col-md-3 portfolio-item isotope-item filter-web">
                          <div class="portfolio-card">
                              <div class="portfolio-image">
                                  <img src="{{ asset('frontend/assets/img/portfolio/portfolio-1.webp') }}"
@@ -51,7 +51,7 @@
                          </div>
                      </div><!-- End Portfolio Item -->
 
-                     <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-graphics">
+                     <div class="col-lg-3 col-md-3 portfolio-item isotope-item filter-graphics">
                          <div class="portfolio-card">
                              <div class="portfolio-image">
                                  <img src="{{ asset('frontend/assets/img/portfolio/portfolio-10.webp') }}"
@@ -74,7 +74,7 @@
                          </div>
                      </div><!-- End Portfolio Item -->
 
-                     <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-motion">
+                     <div class="col-lg-3 col-md-3 portfolio-item isotope-item filter-motion">
                          <div class="portfolio-card">
                              <div class="portfolio-image">
                                  <img src="{{ asset('frontend/assets/img/portfolio/portfolio-7.webp') }}"
@@ -98,7 +98,7 @@
                      </div>
                      <!-- End Portfolio Item -->
 
-                     <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-brand">
+                     <div class="col-lg-3 col-md-3 portfolio-item isotope-item filter-brand">
                          <div class="portfolio-card">
                              <div class="portfolio-image">
                                  <img src="{{ asset('frontend/assets/img/portfolio/portfolio-4.webp') }}"
@@ -121,7 +121,7 @@
                          </div>
                      </div><!-- End Portfolio Item -->
 
-                     <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-web">
+                     <div class="col-lg-3 col-md-3 portfolio-item isotope-item filter-web">
                          <div class="portfolio-card">
                              <div class="portfolio-image">
                                  <img src="{{ asset('frontend/assets/img/portfolio/portfolio-2.webp') }}"
@@ -144,7 +144,7 @@
                          </div>
                      </div><!-- End Portfolio Item -->
 
-                     <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-graphics">
+                     <div class="col-lg-3 col-md-3 portfolio-item isotope-item filter-graphics">
                          <div class="portfolio-card">
                              <div class="portfolio-image">
                                  <img src="{{ asset('frontend/assets/img/portfolio/portfolio-11.webp') }}"
@@ -168,6 +168,9 @@
                      </div><!-- End Portfolio Item -->
 
                  </div><!-- End Portfolio Container -->
+
+                 <a href="#" class="btn btn-outline-primary">See all Portfolio</a>
+
 
              </div>
 

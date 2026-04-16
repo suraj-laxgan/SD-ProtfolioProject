@@ -24,15 +24,15 @@
     <!-- /Portfolio Section -->
 
     <!-- Testimonials Section -->
-    @include('layout.frontend.testimonials')
+    {{-- @include('layout.frontend.testimonials') --}}
     <!-- /Testimonials Section -->
 
     <!-- Services Section -->
-    @include('layout.frontend.services')
+    {{-- @include('layout.frontend.services') --}}
     <!-- /Services Section -->
 
     <!-- Faq Section -->
-    @include('layout.frontend.faq')
+    {{-- @include('layout.frontend.faq') --}}
     <!-- /Faq Section -->
 
     <!-- Contact Section -->

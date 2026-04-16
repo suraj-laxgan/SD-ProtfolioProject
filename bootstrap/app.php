@@ -60,8 +60,8 @@ return Application::configure(basePath: dirname(__DIR__))
             
             // Custom error page
             $view = view()->exists("errors.$status") ? "errors.$status" : "errors.default";
-            return response()->view($view, [
-                'message' => $e->getMessage()
-            ], $status);
+            // return response()->view($view, [
+            //     'message' => $e->getMessage()
+            // ], $status);
         });
     })->create();
