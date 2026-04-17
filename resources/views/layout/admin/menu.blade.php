@@ -59,7 +59,7 @@
                      </a>
                  </li>
              </ul>
-               <ul class="menu-sub">
+             <ul class="menu-sub">
                  <li class="menu-item {{ request()->routeIs('skill.*') ? 'active' : '' }}">
                      <a href="{{ route('skill.index') }}" class="menu-link">
                          <div>List</div>
@@ -67,49 +67,50 @@
                  </li>
              </ul>
          </li>
-          <li class="menu-item {{ request()->routeIs('exprence.*') ? 'active open' : '' }}">
-             <a href="{{ route('skill.index') }}" class="menu-link">
+         <li class="menu-item {{ request()->routeIs('experience.*') ? 'active open' : '' }}">
+             <a href="{{ route('experience.index') }}" class="menu-link">
                  <i class="menu-icon tf-icons bx bx-collection"></i>
                  <div data-i18n="Basic">Experience</div>
              </a>
          </li>
-          <li class="menu-item {{ request()->routeIs('education.*') ? 'active open' : '' }}">
+         <li class="menu-item {{ request()->routeIs('education.*') ? 'active open' : '' }}">
              <a href="{{ route('education.index') }}" class="menu-link">
                  <i class="menu-icon tf-icons bx bx-collection"></i>
                  <div data-i18n="Basic">Education</div>
              </a>
          </li>
-          <li class="menu-item">
+         <li class="menu-item">
              <a href="cards-basic.html" class="menu-link">
                  <i class="menu-icon tf-icons bx bx-collection"></i>
                  <div data-i18n="Basic">Projects</div>
              </a>
          </li>
-          <li class="menu-item">
+         <li class="menu-item {{ request()->routeIs('contact.*') ? 'active' : '' }}">
+             <a href="{{ route('contact.index') }}" class="menu-link">
+                 <i class="menu-icon tf-icons bx bx-collection"></i>
+                 <div data-i18n="Basic">Contact Messages</div>
+             </a>
+         </li>
+         <li class="menu-item">
              <a href="cards-basic.html" class="menu-link">
                  <i class="menu-icon tf-icons bx bx-collection"></i>
                  <div data-i18n="Basic">Blog</div>
              </a>
          </li>
-          <li class="menu-item">
+         <li class="menu-item">
              <a href="cards-basic.html" class="menu-link">
                  <i class="menu-icon tf-icons bx bx-collection"></i>
                  <div data-i18n="Basic">API Docs</div>
              </a>
          </li>
-          <li class="menu-item">
+         <li class="menu-item">
              <a href="cards-basic.html" class="menu-link">
                  <i class="menu-icon tf-icons bx bx-collection"></i>
                  <div data-i18n="Basic">SEO</div>
              </a>
          </li>
-          <li class="menu-item">
-             <a href="cards-basic.html" class="menu-link">
-                 <i class="menu-icon tf-icons bx bx-collection"></i>
-                 <div data-i18n="Basic">Messages</div>
-             </a>
-         </li>
-          <li class="menu-item">
+
+         <li class="menu-item">
              <a href="cards-basic.html" class="menu-link">
                  <i class="menu-icon tf-icons bx bx-collection"></i>
                  <div data-i18n="Basic">Analytics</div>

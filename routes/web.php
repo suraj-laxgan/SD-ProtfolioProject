@@ -71,14 +71,14 @@ use App\Http\Controllers\ContactController;
             Route::delete('/skill/delete/{id}', [SkillController::class, 'delete'])->name('skill.delete');
 
         /*
-            Exprence route 
+            Experience route 
         */
-            Route::get('/exprence/index', [ExperienceController::class, 'index'])->name('exprence.index');
-            Route::get('/exprence/create', [ExperienceController::class, 'create'])->name('exprence.create');
-            Route::post('/exprence/store', [ExperienceController::class, 'store'])->name('exprence.store');
-            Route::get('/exprence/edit/{id}', [ExperienceController::class, 'edit'])->name('exprence.edit');
-            Route::patch('/exprence/update', [ExperienceController::class, 'update'])->name('exprence.update');
-            Route::delete('/exprence/delete/{id}', [ExperienceController::class, 'delete'])->name('exprence.delete');
+            Route::get('/experience/index', [ExperienceController::class, 'index'])->name('experience.index');
+            Route::get('/experience/create', [ExperienceController::class, 'create'])->name('experience.create');
+            Route::post('/experience/store', [ExperienceController::class, 'store'])->name('experience.store');
+            Route::get('/experience/edit/{id}', [ExperienceController::class, 'edit'])->name('experience.edit');
+            Route::patch('/experience/update', [ExperienceController::class, 'update'])->name('experience.update');
+            Route::delete('/experience/delete/{id}', [ExperienceController::class, 'delete'])->name('experience.delete');
 
         /*
             Education route 

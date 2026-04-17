@@ -184,7 +184,7 @@
                                 <textarea name="resume_header" class="form-control" id="resume_header" cols="30" rows="5"></textarea>
                             </div>
                             <div class="mb-3 col-md-6">
-                                <label for="exp_header" class="form-label">Exprence Header</label>
+                                <label for="exp_header" class="form-label">Experience Header</label>
                                 <textarea name="exp_header" class="form-control" id="exp_header" cols="30" rows="5"></textarea>
                             </div>
                             <div class="mb-3 col-md-6">

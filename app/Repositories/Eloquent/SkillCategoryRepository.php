@@ -42,4 +42,10 @@ class SkillCategoryRepository implements SkillCategoryRepositoryInterface
         $this->skillCategory->update($data);
         return $this->skillCategory;
     }
+
+     public function getCategoryAndSkill()
+    {
+        $skillCategory = $this->skillCategory->with('categorySkill')->get();
+        return $skillCategory ;
+    }
 }

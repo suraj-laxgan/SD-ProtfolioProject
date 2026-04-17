@@ -6,34 +6,35 @@ use App\Repositories\Contracts\ExprenceRepositoryInterface;
 
 class ExprenceService
 {
-    protected $exprenceRepo;
-    protected $exprence;
+    protected $experienceRepo;
+    protected $experience;
 
-    public function __construct(ExprenceRepositoryInterface $exprenceRepo)
+    public function __construct(ExprenceRepositoryInterface $experienceRepo)
     {
-        $this->exprenceRepo = $exprenceRepo;
+        $this->experienceRepo = $experienceRepo;
     }
 
     public function create(array $data)
     {
-        $this->exprence = $this->exprenceRepo->create($data);
-        return $this->exprence;
+        $this->experience = $this->experienceRepo->create($data);
+        return $this->experience;
     }
 
 
-    public function FindById(int $id)
+    public function FindById($encryptedId)
     {
-        return $this->exprenceRepo->FindById($id);
+        $id = decrypt($encryptedId);
+        return $this->experienceRepo->FindById($id);
     }
 
      public function FindList()
     {
-        return $this->exprenceRepo->FindList();
+        return $this->experienceRepo->FindList();
     }
 
-    public function Update($exprence, array $data){
-        $this->exprence = $this->exprenceRepo->update($exprence, $data);
-        return $this->exprence;
+    public function Update($experience, array $data){
+        $this->experience = $this->experienceRepo->update($experience, $data);
+        return $this->experience;
     }
 
 

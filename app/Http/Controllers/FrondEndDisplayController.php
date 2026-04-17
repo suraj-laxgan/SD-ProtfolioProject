@@ -4,14 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\WsproileService;
+use App\Services\SkillCategoryService;
 
 class FrondEndDisplayController extends Controller
 {
     protected $wsProfileService;
+    protected $skillCategoryService;
 
-    public function __construct(WsproileService $wsProfileService)
+    public function __construct(WsproileService $wsProfileService, SkillCategoryService $skillCategoryService)
     {
         $this->wsProfileService = $wsProfileService;
+        $this->skillCategoryService = $skillCategoryService;
+
     }
     /**
      * Display a listing of the resource.
@@ -19,8 +23,11 @@ class FrondEndDisplayController extends Controller
     public function index()
     {
         $profile = $this->wsProfileService->FindByEmail('surajdas11120@gmail.com');
+        $skills = $this->skillCategoryService->getCategoryAndSkill();
+
         return view('welcome', [
             'profiles' => $profile,
+            'skills' => $skills
         ]);
     }
 

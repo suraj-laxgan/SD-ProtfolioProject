@@ -30,11 +30,17 @@ class SkillCategoryService
     {
         return $this->categoryRepo->FindList();
     }
+
     public function findCategory()
     {
         return $this->categoryRepo->findCategory();
     }
-    
+
+    public function getCategoryAndSkill()
+    {
+        return $this->categoryRepo->getCategoryAndSkill();
+    }
+
 
     public function Update($category, array $data)
     {

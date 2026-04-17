@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\skillService;
+use App\Services\SkillService;
 use App\Services\SkillCategoryService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -15,7 +15,7 @@ class SkillController extends Controller
     protected $skillService;
     protected $skillCategoryService;
 
-    public function __construct(skillService $skillService, SkillCategoryService $skillCategoryService)
+    public function __construct(SkillService $skillService, SkillCategoryService $skillCategoryService)
     {
         $this->skillService = $skillService;
         $this->skillCategoryService = $skillCategoryService;

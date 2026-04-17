@@ -20,20 +20,13 @@ class EducationRepository implements EducationRepositoryInterface
     public function findById(int $id)
     {
         $this->education = $this->education->where('id', $id)->first();
-        if (!$this->education) {
-            return back()->withErrors(['email' => 'Skill not found.']);
-        }
         return $this->education;
     }
 
     public function FindList()
     {
-        $education = $this->education->get();
-        if (COUNT($education) >= 1) {
-           return $education ;
-        }else{
-            return back()->withErrors(['message' => 'No data found.']);
-        }
+        $education = $this->education->paginate(10);
+        return $education ;
     }
 
     public function update(int $id, array $data)

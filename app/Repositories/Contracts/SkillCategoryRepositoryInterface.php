@@ -9,5 +9,6 @@ interface SkillCategoryRepositoryInterface
     public function findCategory();
     public function findById(int $id);
     public function update(int $id, array $data);
+     public function getCategoryAndSkill();
 
 }

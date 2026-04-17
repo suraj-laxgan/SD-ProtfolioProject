@@ -7,39 +7,32 @@ use App\Models\experience;
 
 class ExprenceRepository implements ExprenceRepositoryInterface
 {
-    protected $exprence;
+    protected $experience;
     public function __construct(experience $experience)
     {
-        $this->exprence = $experience;
+        $this->experience = $experience;
     }
     public function create(array $data)
     {
-        return $this->exprence->create($data);
+        return $this->experience->create($data);
     }
 
     public function findById(int $id)
     {
-        $this->exprence = $this->exprence->where('id', $id)->first();
-        if (!$this->exprence) {
-            return back()->withErrors(['email' => 'Skill not found.']);
-        }
-        return $this->exprence;
+        $this->experience = $this->experience->where('id', $id)->first();
+        return $this->experience;
     }
 
     public function FindList()
     {
-        $skill = $this->exprence->get();
-        if (COUNT($skill) >= 1) {
-            return $skill;
-        } else {
-            return back()->withErrors(['message' => 'No data found.']);
-        }
+        $skill = $this->experience->orderBy('id','DESC')->paginate(10);
+        return $skill;
     }
 
     public function update(int $id, array $data)
     {
-        $this->exprence = $this->exprence->findOrFail($id);
-        $this->exprence->update($data);
-        return $this->exprence;
+        $this->experience = $this->experience->findOrFail($id);
+        $this->experience->update($data);
+        return $this->experience;
     }
 }

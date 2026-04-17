@@ -20,8 +20,9 @@ class EducationService
     }
 
 
-    public function FindById(int $id)
+    public function FindById($encryptedId)
     {
+        $id = decrypt($encryptedId);
         return $this->educationRepo->FindById($id);
     }
 

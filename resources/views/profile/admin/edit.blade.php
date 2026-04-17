@@ -203,7 +203,7 @@
                                 </textarea>
                             </div>
                             <div class="mb-3 col-md-6">
-                                <label for="exp_header" class="form-label">Exprence Header</label>
+                                <label for="exp_header" class="form-label">Experience Header</label>
                                 <textarea name="exp_header" class="form-control" id="exp_header"  cols="30" rows="5">
                                     {{ old('exp_header', $profiles->exp_header) }}
                                 </textarea>
