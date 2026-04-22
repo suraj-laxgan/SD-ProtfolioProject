@@ -18,7 +18,7 @@
          <div class="row">
              <div class="col-lg-3 position-relative" data-aos="fade-right" data-aos-delay="200">
                  <div class="about-image">
-                     <img src="{{ asset('frontend/assets/img/profile/profile-square-2.webp') }}" alt="Profile Image"
+                     <img src="{{ asset('frontend/assets/img/profile/wpa001.jpeg') }}" alt="Profile Image"
                          class="img-fluid rounded-4">
                  </div>
              </div>

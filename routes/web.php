@@ -94,14 +94,6 @@ use App\Http\Controllers\ContactController;
             Project Protfolio route 
 
         */
-            Route::get('/project-technology/index', [ProjectTechnologyController::class, 'index'])->name('project_technology.index');
-            Route::get('/project-technology/create', [ProjectTechnologyController::class, 'create'])->name('project_technology.create');
-            Route::post('/project-technology/store', [ProjectTechnologyController::class, 'store'])->name('project_technology.store');
-            Route::get('/project-technology/edit/{id}', [ProjectTechnologyController::class, 'edit'])->name('project_technology.edit');
-            Route::patch('/project-technology/update', [ProjectTechnologyController::class, 'update'])->name('project_technology.update');
-            Route::delete('/project-technology/delete/{id}', [ProjectTechnologyController::class, 'delete'])->name('project_technology.delete');
-
-
             Route::get('/project-category/index', [ProjectCategoryController::class, 'index'])->name('project_category.index');
             Route::get('/project-category/create', [ProjectCategoryController::class, 'create'])->name('project_category.create');
             Route::post('/project-category/store', [ProjectCategoryController::class, 'store'])->name('project_category.store');
@@ -110,6 +102,14 @@ use App\Http\Controllers\ContactController;
             Route::delete('/project-category/delete/{id}', [ProjectCategoryController::class, 'delete'])->name('project_category.delete');
 
 
+            Route::get('/project-technology/index', [ProjectTechnologyController::class, 'index'])->name('project_technology.index');
+            Route::get('/project-technology/create', [ProjectTechnologyController::class, 'create'])->name('project_technology.create');
+            Route::post('/project-technology/store', [ProjectTechnologyController::class, 'store'])->name('project_technology.store');
+            Route::get('/project-technology/edit/{id}', [ProjectTechnologyController::class, 'edit'])->name('project_technology.edit');
+            Route::patch('/project-technology/update', [ProjectTechnologyController::class, 'update'])->name('project_technology.update');
+            Route::delete('/project-technology/delete/{id}', [ProjectTechnologyController::class, 'delete'])->name('project_technology.delete');
+
+            
             Route::get('/project/index', [ProjectController::class, 'index'])->name('project.index');
             Route::get('/project/create', [ProjectController::class, 'create'])->name('project.create');
             Route::post('/project/store', [ProjectController::class, 'store'])->name('project.store');

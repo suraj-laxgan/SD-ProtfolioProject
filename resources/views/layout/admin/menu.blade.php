@@ -79,12 +79,34 @@
                  <div data-i18n="Basic">Education</div>
              </a>
          </li>
-         <li class="menu-item">
-             <a href="cards-basic.html" class="menu-link">
+         <li class="menu-item {{ request()->routeIs('project*') ? 'active open' : '' }}">
+             <a href="javascript:void(0);" class="menu-link menu-toggle">
                  <i class="menu-icon tf-icons bx bx-collection"></i>
-                 <div data-i18n="Basic">Projects</div>
+                 <div data-i18n="Basic">Project</div>
              </a>
+             <ul class="menu-sub">
+                 <li class="menu-item {{ request()->routeIs('project_category.*') ? 'active' : '' }}">
+                     <a href="{{ route('project_category.index') }}" class="menu-link">
+                         <div>Category</div>
+                     </a>
+                 </li>
+             </ul>
+             <ul class="menu-sub">
+                 <li class="menu-item {{ request()->routeIs('project_technology.*') ? 'active' : '' }}">
+                     <a href="{{ route('project_technology.index') }}" class="menu-link">
+                         <div>Technology</div>
+                     </a>
+                 </li>
+             </ul>
+             <ul class="menu-sub">
+                 <li class="menu-item {{ request()->routeIs('project.*') ? 'active' : '' }}">
+                     <a href="{{ route('project.index') }}" class="menu-link">
+                         <div>List</div>
+                     </a>
+                 </li>
+             </ul>
          </li>
+         
          <li class="menu-item {{ request()->routeIs('contact.*') ? 'active' : '' }}">
              <a href="{{ route('contact.index') }}" class="menu-link">
                  <i class="menu-icon tf-icons bx bx-collection"></i>

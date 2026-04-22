@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class projectTechnology extends Model
 {
-    //
+       protected $guarded = [];
+
 }

@@ -30,19 +30,7 @@
 
                      <div class="col-lg-3 col-md-3 portfolio-item isotope-item filter-web">
                          <div class="portfolio-card">
-                             <div class="portfolio-image">
-                                 <img src="{{ asset('frontend/assets/img/portfolio/portfolio-1.webp') }}"
-                                     class="img-fluid" alt="" loading="lazy">
-                                 <div class="portfolio-overlay">
-                                     <div class="portfolio-actions">
-                                         <a href="{{ asset('frontend/assets/img/portfolio/portfolio-1.webp') }}"
-                                             class="glightbox preview-link" data-gallery="portfolio-gallery-web"><i
-                                                 class="bi bi-eye"></i></a>
-                                         <a href="portfolio-details.html" class="details-link"><i
-                                                 class="bi bi-arrow-right"></i></a>
-                                     </div>
-                                 </div>
-                             </div>
+                             
                              <div class="portfolio-content">
                                  <span class="category">Web Design</span>
                                  <h3>Modern Dashboard Interface</h3>
@@ -53,19 +41,7 @@
 
                      <div class="col-lg-3 col-md-3 portfolio-item isotope-item filter-graphics">
                          <div class="portfolio-card">
-                             <div class="portfolio-image">
-                                 <img src="{{ asset('frontend/assets/img/portfolio/portfolio-10.webp') }}"
-                                     class="img-fluid" alt="" loading="lazy">
-                                 <div class="portfolio-overlay">
-                                     <div class="portfolio-actions">
-                                         <a href="{{ asset('frontend/assets/img/portfolio/portfolio-10.webp') }}"
-                                             class="glightbox preview-link" data-gallery="portfolio-gallery-graphics"><i
-                                                 class="bi bi-eye"></i></a>
-                                         <a href="portfolio-details.html" class="details-link"><i
-                                                 class="bi bi-arrow-right"></i></a>
-                                     </div>
-                                 </div>
-                             </div>
+                            
                              <div class="portfolio-content">
                                  <span class="category">Graphics</span>
                                  <h3>Creative Brand Identity</h3>
@@ -76,19 +52,7 @@
 
                      <div class="col-lg-3 col-md-3 portfolio-item isotope-item filter-motion">
                          <div class="portfolio-card">
-                             <div class="portfolio-image">
-                                 <img src="{{ asset('frontend/assets/img/portfolio/portfolio-7.webp') }}"
-                                     class="img-fluid" alt="" loading="lazy">
-                                 <div class="portfolio-overlay">
-                                     <div class="portfolio-actions">
-                                         <a href="{{ asset('frontend/assets/img/portfolio/portfolio-7.webp') }}"
-                                             class="glightbox preview-link" data-gallery="portfolio-gallery-motion"><i
-                                                 class="bi bi-eye"></i></a>
-                                         <a href="portfolio-details.html" class="details-link"><i
-                                                 class="bi bi-arrow-right"></i></a>
-                                     </div>
-                                 </div>
-                             </div>
+                             
                              <div class="portfolio-content">
                                  <span class="category">Motion</span>
                                  <h3>Product Animation Reel</h3>
@@ -100,69 +64,11 @@
 
                      <div class="col-lg-3 col-md-3 portfolio-item isotope-item filter-brand">
                          <div class="portfolio-card">
-                             <div class="portfolio-image">
-                                 <img src="{{ asset('frontend/assets/img/portfolio/portfolio-4.webp') }}"
-                                     class="img-fluid" alt="" loading="lazy">
-                                 <div class="portfolio-overlay">
-                                     <div class="portfolio-actions">
-                                         <a href="{{ asset('frontend/assets/img/portfolio/portfolio-4.webp') }}"
-                                             class="glightbox preview-link" data-gallery="portfolio-gallery-brand"><i
-                                                 class="bi bi-eye"></i></a>
-                                         <a href="portfolio-details.html" class="details-link"><i
-                                                 class="bi bi-arrow-right"></i></a>
-                                     </div>
-                                 </div>
-                             </div>
+                            
                              <div class="portfolio-content">
                                  <span class="category">Branding</span>
                                  <h3>Luxury Brand Package</h3>
                                  <p>Aenean lacinia bibendum nulla sed consectetur elit.</p>
-                             </div>
-                         </div>
-                     </div><!-- End Portfolio Item -->
-
-                     <div class="col-lg-3 col-md-3 portfolio-item isotope-item filter-web">
-                         <div class="portfolio-card">
-                             <div class="portfolio-image">
-                                 <img src="{{ asset('frontend/assets/img/portfolio/portfolio-2.webp') }}"
-                                     class="img-fluid" alt="" loading="lazy">
-                                 <div class="portfolio-overlay">
-                                     <div class="portfolio-actions">
-                                         <a href="{{ asset('frontend/assets/img/portfolio/portfolio-2.webp') }}"
-                                             class="glightbox preview-link" data-gallery="portfolio-gallery-web"><i
-                                                 class="bi bi-eye"></i></a>
-                                         <a href="portfolio-details.html" class="details-link"><i
-                                                 class="bi bi-arrow-right"></i></a>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="portfolio-content">
-                                 <span class="category">Web Design</span>
-                                 <h3>E-commerce Platform</h3>
-                                 <p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                             </div>
-                         </div>
-                     </div><!-- End Portfolio Item -->
-
-                     <div class="col-lg-3 col-md-3 portfolio-item isotope-item filter-graphics">
-                         <div class="portfolio-card">
-                             <div class="portfolio-image">
-                                 <img src="{{ asset('frontend/assets/img/portfolio/portfolio-11.webp') }}"
-                                     class="img-fluid" alt="" loading="lazy">
-                                 <div class="portfolio-overlay">
-                                     <div class="portfolio-actions">
-                                         <a href="{{ asset('frontend/assets/img/portfolio/portfolio-11.webp') }}"
-                                             class="glightbox preview-link"
-                                             data-gallery="portfolio-gallery-graphics"><i class="bi bi-eye"></i></a>
-                                         <a href="portfolio-details.html" class="details-link"><i
-                                                 class="bi bi-arrow-right"></i></a>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="portfolio-content">
-                                 <span class="category">Graphics</span>
-                                 <h3>Digital Art Collection</h3>
-                                 <p>Cras mattis consectetur purus sit amet fermentum.</p>
                              </div>
                          </div>
                      </div><!-- End Portfolio Item -->

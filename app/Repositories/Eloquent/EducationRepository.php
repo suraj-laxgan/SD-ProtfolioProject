@@ -25,7 +25,7 @@ class EducationRepository implements EducationRepositoryInterface
 
     public function FindList()
     {
-        $education = $this->education->paginate(10);
+        $education = $this->education->orderBy('id','DESC')->paginate(10);
         return $education ;
     }
 

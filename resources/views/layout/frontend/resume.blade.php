@@ -10,8 +10,7 @@
              </svg>
          </div>
          <p>
-             Professional backend developer with strong experience in building scalable APIs,
-             web applications, and backend systems using PHP, Laravel, and modern technologies.
+             {{ $profiles->resume_header }}
          </p>
      </div><!-- End Section Title -->
 
@@ -26,120 +25,47 @@
                              database architecture, and scalable application design.</p>
 
                          <div class="timeline">
-                             <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-                                 <div class="timeline-left">
-                                     <h4 class="company">Clirnet Service Pvt.ltd</h4>
-                                     <span class="period">April, 2023 - Current</span>
+                             @forelse ($exprences as $exprence)
+                                 <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                                     <div class="timeline-left">
+                                         <h4 class="company">{{ $exprence->company_name }}</h4>
+                                         <span class="period">{{ $exprence->start_date ? $exprence->start_date->format('F-Y') : 'N/A' }} - {{ $exprence->end_date ? $exprence->end_date->format('F-Y') : 'Current' }}  </span>
+                                     </div>
+                                     <div class="timeline-dot"></div>
+                                     <div class="timeline-right">
+                                         <h3 class="position">{{ $exprence->position }}</h3>
+                                         <p class="description">
+                                            {{-- {{ $exprence->description }} --}}
+                                          {!! str_replace('. ', ".<br>", $exprence->description) !!}
+                                         </p>
+                                     </div>
                                  </div>
-                                 <div class="timeline-dot"></div>
-                                 <div class="timeline-right">
-                                     <h3 class="position">Software Developer</h3>
-                                     <p class="description">
-                                         Developing scalable backend systems and REST APIs using Laravel and Node.js.
-                                         Responsible for designing application architecture, optimizing database
-                                         queries,
-                                         and improving overall system performance.
-                                     </p>
-                                 </div>
-                             </div>
-
-                             <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-                                 <div class="timeline-left">
-                                     <h4 class="company">Capital numbers pvt.ltd</h4>
-                                     <span class="period">2022 - 2023</span>
-                                 </div>
-                                 <div class="timeline-dot"></div>
-                                 <div class="timeline-right">
-                                     <h3 class="position">Software Developer</h3>
-                                     <p class="description">
-                                         Worked on enterprise web applications using PHP and Laravel.
-                                         Developed secure REST APIs and optimized database performance
-                                         for high-traffic web applications.
-                                     </p>
-                                     <ul>
-                                         <li>Designed and developed REST APIs using Laravel framework</li>
-                                         <li>Implemented authentication systems using JWT and OAuth</li>
-                                         <li>Optimized database queries and improved application performance</li>
-                                         <li>Collaborated with frontend developers and product teams to deliver scalable
-                                             solutions</li>
-                                     </ul>
-                                     <p></p>
-                                 </div>
-                             </div>
-
-                             <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
-                                 <div class="timeline-left">
-                                     <h4 class="company">Web Digital mantra Pvt.Ltd</h4>
-                                     <span class="period">2022-2022</span>
-                                 </div>
-                                 <div class="timeline-dot"></div>
-                                 <div class="timeline-right">
-                                     <h3 class="position">Backend Developer</h3>
-                                     <p class="description">Started career as a PHP developer working on web
-                                         applications,
-                                         database integration, and backend logic for dynamic websites.</p>
-                                 </div>
-                             </div>
-                             <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
-                                 <div class="timeline-left">
-                                     <h4 class="company">Uktek India</h4>
-                                     <span class="period">2019-2022</span>
-                                 </div>
-                                 <div class="timeline-dot"></div>
-                                 <div class="timeline-right">
-                                     <h3 class="position">Backend Developer</h3>
-                                     <p class="description">Started career as a PHP developer working on web
-                                         applications,
-                                         database integration, and backend logic for dynamic websites.</p>
-                                 </div>
-                             </div>
+                             @empty
+                               
+                             @endforelse
                          </div>
                      </div>
 
                      <div class="resume-block" data-aos="fade-up" data-aos-delay="100">
                          <h2>My Education</h2>
-                         <p class="lead">Academic background focused on computer science, programming,
-                             and software engineering principles.</p>
-
+                         <p class="lead">{{ $profiles->edu_header }}</p>
                          <div class="timeline">
-                             <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                            @forelse ($educations as $education)
+                                 <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
                                  <div class="timeline-left">
-                                     <h4 class="company">Vestibulum University</h4>
-                                     <span class="period">2017-2019</span>
+                                     <h4 class="company">{{ $education->institution }}</h4>
+                                     <span class="period">{{ $education->start_year }}-{{ $education->end_year }}</span>
                                  </div>
                                  <div class="timeline-dot"></div>
                                  <div class="timeline-right">
-                                     <h3 class="position">Diploma in Consequat</h3>
-                                     <p class="description">Curabitur ullamcorper ultricies nisi nam eget dui etiam
-                                         rhoncus maecenas tempus.</p>
+                                     <h3 class="position">{{ $education->degree }} in {{ $education->field_of_study }} </h3>
+                                     {{-- <p class="description">Curabitur ullamcorper ultricies nisi nam eget dui etiam
+                                         rhoncus maecenas tempus.</p> --}}
                                  </div>
                              </div>
-
-                             <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-                                 <div class="timeline-left">
-                                     <h4 class="company">Nullam Corp</h4>
-                                     <span class="period">2019 - 2023</span>
-                                 </div>
-                                 <div class="timeline-dot"></div>
-                                 <div class="timeline-right">
-                                     <h3 class="position">Master of Fine Arts &amp; Graphic Design</h3>
-                                     <p class="description">Curabitur ullamcorper ultricies nisi nam eget dui etiam
-                                         rhoncus maecenas tempus.</p>
-                                 </div>
-                             </div>
-
-                             <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
-                                 <div class="timeline-left">
-                                     <h4 class="company">Vestibulum University</h4>
-                                     <span class="period">2015-2019</span>
-                                 </div>
-                                 <div class="timeline-dot"></div>
-                                 <div class="timeline-right">
-                                     <h3 class="position">Bachelor of Fine Arts &amp; Graphic Design</h3>
-                                     <p class="description">Curabitur ullamcorper ultricies nisi nam eget dui etiam
-                                         rhoncus maecenas tempus.</p>
-                                 </div>
-                             </div>
+                            @empty
+                                
+                            @endforelse
                          </div>
                      </div>
                  </div>
