@@ -12,7 +12,6 @@
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Image</th>
                                 <th>Slug</th>
                                 <th>Category</th>
                                 <th>Technology</th>
@@ -27,9 +26,8 @@
                                 <tr class="{{ session('updated_id') == (string) $l->id ? 'active-row' : '' }}">
                                     <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>
                                             {{ $l->title }} </strong></td>
-                                    <td>{{ $l->thumbnail }}</td>
                                     <td>{{ $l->slug }}</td>
-                                    <td>{{ $l->category_id }}</td>
+                                    <td>{{ $l->getCategory->name }}</td>
                                     <td>{{ $l->technology_id }}</td>
                                     <td>{{ $l->github_link }}</td>
                                     <td>{{ $l->live_url }}</td>
@@ -37,13 +35,13 @@
                                     {{-- <td>{{ str($l->description)->limit(10) }}</td> --}}
                                     <td>
                                         <a
-                                            href="{{ route('education.edit', [encrypt($l->id), 'page' => $lists->currentPage()]) }}"><i
+                                            href="{{ route('project.edit', [encrypt($l->id), 'page' => $lists->currentPage()]) }}"><i
                                                 class="bx bx-edit-alt me-1"></i>Edit</a>
                                     </td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="9" class="text-center">
+                                    <td colspan="8" class="text-center">
                                         <div class="p-4">
                                             <p class="text-muted">No data found in the table.</p>
                                         </div>

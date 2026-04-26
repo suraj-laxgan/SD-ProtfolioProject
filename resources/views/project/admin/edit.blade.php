@@ -8,7 +8,7 @@
         <div class="col-md-12">
             <div class="card mb-4">
                 <div class="card-body">
-                    <form id="formAccountSettings" method="POST" action="{{ route('education.update') }}">
+                    <form id="formAccountSettings" method="POST" action="{{ route('project.update') }}">
                         @csrf
                         @method('PATCH')
                         <input type="hidden" name="id" value="{{ $data->id }}">
@@ -16,63 +16,81 @@
 
                         <div class="row">
                             <div class="mb-3 col-md-6">
-                                <label for="degree" class="form-label">Degree</label>
-                                <input class="form-control @error('degree') is-invalid @enderror"
-                                    value="{{ $data->degree }}" type="text" id="degree" name="degree" autofocus />
+                                <label for="title" class="form-label">Title</label>
+                                <input class="form-control @error('title') is-invalid @enderror" value="{{ $data->title }}"
+                                    type="text" id="title" name="title" autofocus />
                             </div>
                             <div class="mb-3 col-md-6">
-                                <label for="field_of_study" class="form-label">Study</label>
-                                <input class="form-control @error('field_of_study') is-invalid @enderror"
-                                    value="{{ $data->field_of_study }}" type="text" id="field_of_study"
-                                    name="field_of_study" autofocus />
-                            </div>
-                            <div class="mb-3 col-md-6">
-                                <label for="institution" class="form-label">Institution</label>
-                                <input class="form-control @error('institution') is-invalid @enderror"
-                                    value="{{ $data->institution }}" type="text" id="institution" name="institution"
-                                    autofocus />
-                            </div>
-                            <div class="mb-3 col-md-6">
-                                <label for="location" class="form-label">Location</label>
-                                <input class="form-control @error('location') is-invalid @enderror"
-                                    value="{{ $data->location }}" type="text" id="location" name="location" autofocus />
-                            </div>
-                            <div class="mb-3 col-md-6">
-                                <label for="start_year" class="form-label">Start Year</label>
-                                <select name="start_year" id="start_year"
-                                    class="select2 form-select @error('start_year') is-invalid @enderror">
-                                    <option value="">Select Year</option>
-                                    @for ($year = date('Y'); $year >= 2001; $year--)
-                                        <option value="{{ $year }}"
-                                            {{ $data->start_year == $year ? 'selected' : '' }}>
-                                            {{ $year }}
-                                        </option>
-                                    @endfor
+                                <label for="category_id" class="form-label">Category</label>
+                                <select name="category_id" id="category_id"
+                                    class="select2 form-select @error('category_id') is-invalid @enderror">
+                                    <option value="">Select Category</option>
+                                    @forelse ($categories as $category)
+                                        <option value="{{ $category->id }}"
+                                            {{ $data->category_id == $category->id ? 'selected' : '' }}>
+                                            {{ $category->name }}</option>
+                                    @empty
+                                        <option value="">Category Not found</option>
+                                    @endforelse
                                 </select>
                             </div>
                             <div class="mb-3 col-md-6">
-                                <label for="end_year" class="form-label">End Year</label>
-                                <select name="end_year" id="end_year"
-                                    class="select2 form-select @error('end_year') is-invalid @enderror">
-                                    <option value="">Select Year</option>
-                                    @for ($year = date('Y'); $year >= 2001; $year--)
-                                        <option value="{{ $year }}"
-                                            {{ $data->end_year == $year ? 'selected' : '' }}>
-                                            {{ $year }}
+                                <label for="technology_id" class="form-label">Technology</label>
+                                <select name="technology_id" id="technology_id"
+                                    class="select2 form-select @error('technology_id') is-invalid @enderror">
+                                    <option value="">Select Technology</option>
+                                   @forelse ($technologies as $technology)
+                                        <option value="{{ $technology->id }}" 
+                                            {{ $data->technology_id ==  $technology->id  ? 'selected' : '' }}>
+                                            {{ $technology->name }}</option>
+                                    @empty
+                                        <option value="">Technology Not found</option>
+                                        
+                                    @endforelse
+                                </select>
+                            </div>
+                            {{-- <div class="mb-3 col-md-6">
+                                <label for="technology_id" class="form-label">Technology</label>
+                                <select name="technology_id[]" id="technology_id" multiple
+                                    class="select2 form-select @error('technology_id') is-invalid @enderror">
+
+                                    @forelse ($technologies as $technology)
+                                        <option value="{{ $technology->id }}"
+                                            {{ in_array($technology->id, old('technology_id', [])) ? 'selected' : '' }}>
+                                            {{ $technology->name }}
                                         </option>
-                                    @endfor
+                                    @empty
+                                        <option value="" disabled>Technology Not found</option>
+                                    @endforelse
+                                </select>
+                            </div> --}}
+
+                            <div class="mb-3 col-md-6">
+                                <label for="github_link" class="form-label">Github Link</label>
+                                <input class="form-control @error('github_link') is-invalid @enderror"
+                                    value="{{ $data->github_link  }}" type="text" id="github_link" name="github_link"
+                                    autofocus />
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label for="live_url" class="form-label">Live URL</label>
+                                <input class="form-control @error('live_url') is-invalid @enderror"
+                                    value="{{ $data->live_url  }}" type="text" id="live_url" name="live_url" autofocus />
+                            </div>
+
+                            <div class="mb-3 col-md-6">
+                                <label for="status" class="form-label">Status</label>
+                                <select name="status" id="status"
+                                    class="select2 form-select @error('status') is-invalid @enderror">
+                                    <option value="">Select</option>
+                                    <option value="1" {{ $data->status ==  1 ? 'selected' : '' }}>Yes</option>
+                                    <option value="0" {{ $data->status ==  0 ? 'selected' : '' }}>No</option>
                                 </select>
                             </div>
 
                             <div class="mb-3 col-md-6">
-                                <label for="grade" class="form-label">Grade</label>
-                                <input class="form-control @error('grade') is-invalid @enderror"
-                                    value="{{ $data->grade }}" type="text" id="grade" name="grade" autofocus />
-                            </div>
-                            <div class="mb-3 col-md-6">
                                 <label for="description" class="form-label">Description</label>
                                 <textarea name="description" class="form-control" id="description" cols="30" rows="1">
-                                    {{ $data->description }}
+                                    {{ $data->description  }}
                                 </textarea>
                             </div>
                         </div>

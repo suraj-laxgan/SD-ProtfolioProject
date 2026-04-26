@@ -12,7 +12,7 @@ class projectRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,15 @@ class projectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'required|string|max:255|unique:projects,title,' . $this->id,
+            'description' => 'nullable|string',
+            'technology_id' => 'required|array',
+            'technology_id.*' => 'exists:project_technologies,id', // Validate each item in the array
+            'category_id' => 'required',
+            'github_link' => 'nullable',
+            'live_url' => 'nullable',
+            'thumbnail' => 'nullable',
+            'status' => 'required|integer|min:0|max:1',
         ];
     }
 }

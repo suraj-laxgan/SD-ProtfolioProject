@@ -4,18 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use App\Http\Requests\SkillCreateRequest;
+use App\Http\Requests\projectRequest;
 use App\Services\ProjectService;
-
+use App\Services\ProjectCategoryService;
+use App\Services\ProjectTechnologyService;
 use Exception;
 
 class ProjectController extends Controller
 {
     protected $projectService;
+        protected $projectCategoryService;
+    protected $projectTechnologyService;
 
-    public function __construct(ProjectService $projectService)
+
+    public function __construct(ProjectService $projectService, ProjectCategoryService $projectCategoryService, ProjectTechnologyService $projectTechnologyService)
     {
         $this->projectService = $projectService;
+        $this->projectCategoryService = $projectCategoryService;
+        $this->projectTechnologyService = $projectTechnologyService;
+
     }
     /**
      * Display a listing of the resource.
@@ -30,13 +37,15 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('project.admin.create');
+        $technologies = $this->projectTechnologyService->FindList();
+        $categories = $this->projectCategoryService->FindList();
+        return view('project.admin.create',['technologies' => $technologies, 'categories' => $categories]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(SkillCreateRequest $request)
+    public function store(projectRequest $request)
     {
         $validatedData = $request->validated();
         $this->projectService->create($validatedData);
@@ -57,9 +66,11 @@ class ProjectController extends Controller
     public function edit(Request $request, $encryptedId)
     {
         try {
-            $skills = $this->projectService->findById($encryptedId);
+            $data = $this->projectService->findById($encryptedId);
+            $technologies = $this->projectTechnologyService->FindList();
+            $categories = $this->projectCategoryService->FindList();
             $page = $request->query('page', 1);
-            return view('project.admin.edit', compact('skills' , 'page'));
+            return view('project.admin.edit', compact('data' , 'technologies', 'categories','page'));
         } catch (Exception $e) {
             abort(404);
         }
@@ -68,7 +79,7 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(SkillCreateRequest $request)
+    public function update(projectRequest $request)
     {
         try {
             $data = $request->validated();
