@@ -8,7 +8,7 @@
         <div class="col-md-12">
             <div class="card mb-4">
                 <div class="card-body">
-                    <form id="formAccountSettings" method="POST" action="{{ route('education.update') }}">
+                    <form id="formAccountSettings" method="POST" action="{{ route('contact.update') }}">
                         @csrf
                         @method('PATCH')
                         <input type="hidden" name="id" value="{{ $data->id }}">
@@ -16,63 +16,44 @@
 
                         <div class="row">
                             <div class="mb-3 col-md-6">
-                                <label for="degree" class="form-label">Degree</label>
-                                <input class="form-control @error('degree') is-invalid @enderror"
-                                    value="{{ $data->degree }}" type="text" id="degree" name="degree" autofocus />
+                                <label for="name" class="form-label">Name</label>
+                                <input class="form-control @error('name') is-invalid @enderror" value="{{ $data->name }}"
+                                    type="text" id="name" name="name" autofocus />
                             </div>
                             <div class="mb-3 col-md-6">
-                                <label for="field_of_study" class="form-label">Study</label>
-                                <input class="form-control @error('field_of_study') is-invalid @enderror"
-                                    value="{{ $data->field_of_study }}" type="text" id="field_of_study"
-                                    name="field_of_study" autofocus />
+                                <label for="email" class="form-label">Email</label>
+                                <input class="form-control @error('email') is-invalid @enderror" value="{{ $data->email }}"
+                                    type="text" id="email" name="email" autofocus />
                             </div>
                             <div class="mb-3 col-md-6">
-                                <label for="institution" class="form-label">Institution</label>
-                                <input class="form-control @error('institution') is-invalid @enderror"
-                                    value="{{ $data->institution }}" type="text" id="institution" name="institution"
-                                    autofocus />
+                                <label for="subject" class="form-label">Subject</label>
+                                <input class="form-control @error('subject') is-invalid @enderror"
+                                    value="{{ $data->subject }}" type="text" id="subject" name="subject" autofocus />
                             </div>
+
                             <div class="mb-3 col-md-6">
-                                <label for="location" class="form-label">Location</label>
-                                <input class="form-control @error('location') is-invalid @enderror"
-                                    value="{{ $data->location }}" type="text" id="location" name="location" autofocus />
-                            </div>
-                            <div class="mb-3 col-md-6">
-                                <label for="start_year" class="form-label">Start Year</label>
-                                <select name="start_year" id="start_year"
-                                    class="select2 form-select @error('start_year') is-invalid @enderror">
-                                    <option value="">Select Year</option>
-                                    @for ($year = date('Y'); $year >= 2001; $year--)
-                                        <option value="{{ $year }}"
-                                            {{ $data->start_year == $year ? 'selected' : '' }}>
-                                            {{ $year }}
-                                        </option>
-                                    @endfor
-                                </select>
-                            </div>
-                            <div class="mb-3 col-md-6">
-                                <label for="end_year" class="form-label">End Year</label>
-                                <select name="end_year" id="end_year"
-                                    class="select2 form-select @error('end_year') is-invalid @enderror">
-                                    <option value="">Select Year</option>
-                                    @for ($year = date('Y'); $year >= 2001; $year--)
-                                        <option value="{{ $year }}"
-                                            {{ $data->end_year == $year ? 'selected' : '' }}>
-                                            {{ $year }}
-                                        </option>
-                                    @endfor
+                                <label for="start_year" class="form-label">Status</label>
+
+                                <select name="is_read" id="start_year"
+                                    class="select2 form-select @error('is_read') is-invalid @enderror">
+
+                                    <option value="">Select</option>
+
+                                    <option value="1" {{ isset($data) && $data->is_read == 1 ? 'selected' : '' }}>
+                                        Seen
+                                    </option>
+
+                                    <option value="0" {{ isset($data) && $data->is_read == 0 ? 'selected' : '' }}>
+                                        Unseen
+                                    </option>
+
                                 </select>
                             </div>
 
                             <div class="mb-3 col-md-6">
-                                <label for="grade" class="form-label">Grade</label>
-                                <input class="form-control @error('grade') is-invalid @enderror"
-                                    value="{{ $data->grade }}" type="text" id="grade" name="grade" autofocus />
-                            </div>
-                            <div class="mb-3 col-md-6">
-                                <label for="description" class="form-label">Description</label>
-                                <textarea name="description" class="form-control" id="description" cols="30" rows="1">
-                                    {{ $data->description }}
+                                <label for="message" class="form-label">Messsage</label>
+                                <textarea name="message" class="form-control" id="message" cols="30" rows="10">
+                                    {{ $data->message }}
                                 </textarea>
                             </div>
                         </div>

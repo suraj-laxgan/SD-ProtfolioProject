@@ -7,13 +7,13 @@
         /* The main 12-column container for skill*/
 
         /* .skills-master-container {
-            border: 2px solid #e0e0e0;
-            border-radius: 25px;
-            overflow: hidden;
-            padding: 40px;
-            background: #ffffff;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        } */
+                    border: 2px solid #e0e0e0;
+                    border-radius: 25px;
+                    overflow: hidden;
+                    padding: 40px;
+                    background: #ffffff;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+                } */
 
         .skill-category-card {
             background: #ffffff;
@@ -79,6 +79,8 @@
     </style>
 @endpush
 @section('content')
+    @include('layout.admin.alerts')
+    
     <!-- Hero Section -->
     @include('layout.frontend.hero')
     <!-- /Hero Section -->

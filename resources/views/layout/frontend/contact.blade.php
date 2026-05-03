@@ -36,8 +36,10 @@
             <div class="col-lg-6">
                 <div class="contact-form card" data-aos="fade-up" data-aos-delay="300">
                     <div class="card-body p-4 p-lg-5">
-
-                        <form action="forms/contact.php" method="post" class="php-email-form">
+                        {{-- <form id="contactForm"> --}}
+                        {{-- <form id="contactForm" action="forms/contact.php" method="post" class="php-email-form"> --}}
+                        {{-- <form action="{{ route('contact.store') }}" method="post" class="php-email-form">
+                            @csrf
                             <div class="row gy-4">
 
                                 <div class="col-12">
@@ -60,11 +62,38 @@
                                 </div>
 
                                 <div class="col-12 text-center">
-                                    <div class="loading">Loading</div>
-                                    <div class="error-message"></div>
-                                    <div class="sent-message">Your message has been sent. Thank you!</div>
-
                                     <button type="submit" class="btn btn-submit w-100">Submit
+                                        Message</button>
+                                </div>
+
+                            </div>
+                        </form> --}}
+                        <form method="POST" action="{{ route('contact.store') }}">
+                            @csrf
+
+                            <div class="row gy-4">
+
+                                <div class="col-12">
+                                    <input type="text" name="name" class="form-control" placeholder="Your Name"
+                                        required="">
+                                </div>
+
+                                <div class="col-12 ">
+                                    <input type="email" class="form-control" name="email" placeholder="Your Email"
+                                        required="">
+                                </div>
+
+                                <div class="col-12">
+                                    <input type="text" class="form-control" name="subject" placeholder="Subject"
+                                        required="">
+                                </div>
+
+                                <div class="col-12">
+                                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                                </div>
+
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-submit w-100">Send
                                         Message</button>
                                 </div>
 
@@ -80,3 +109,29 @@
     </div>
 
 </section>
+@push('scripts')
+    {{-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> --}}
+    <script>
+        $('#contactForm').on('submit', function(e) {
+            e.preventDefault();
+
+            $('#submitBtn').prop('disabled', true);
+
+            $.ajax({
+                url: "{{ route('contact.store') }}",
+                type: "POST",
+                data: $(this).serialize(),
+                success: function(response) {
+                    $('#successMsg').html('Message sent successfully!');
+                    $('#contactForm')[0].reset();
+                },
+                error: function() {
+                    alert('Something went wrong');
+                },
+                complete: function() {
+                    $('#submitBtn').prop('disabled', false);
+                }
+            });
+        });
+    </script>
+@endpush

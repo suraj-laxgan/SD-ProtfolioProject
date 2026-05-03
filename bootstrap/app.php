@@ -8,18 +8,19 @@ use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
-        web: __DIR__.'/../routes/web.php',
-        commands: __DIR__.'/../routes/console.php',
+        web: __DIR__ . '/../routes/web.php',
+        commands: __DIR__ . '/../routes/console.php',
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
         //
     })
-     ->withExceptions(function (Exceptions $exceptions): void {
+    ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->render(function (Throwable $e, $request) {
-          
+
 
             /*
         |--------------------------------------------------------------------------
@@ -28,11 +29,11 @@ return Application::configure(basePath: dirname(__DIR__))
         */
 
             if ($e instanceof ValidationException) {
-                    return redirect()->back()
-                        ->withErrors($e->errors())
-                        ->withInput();
-                }
-                
+                return redirect()->back()
+                    ->withErrors($e->errors())
+                    ->withInput();
+            }
+
             $status = $e instanceof HttpExceptionInterface ? $e->getStatusCode() : 500;
             // Log every web exception
             $data = [
@@ -57,11 +58,17 @@ return Application::configure(basePath: dirname(__DIR__))
                 ]),
             ];
             Log::error('Web Exception', $data);
-            
+
             // Custom error page
-            $view = view()->exists("errors.$status") ? "errors.$status" : "errors.default";
-            // return response()->view($view, [
-            //     'message' => $e->getMessage()
-            // ], $status);
+            $isAdmin = request()->is('auth/*');
+            $view = $isAdmin
+                ? (view()->exists("errors.$status") ? "errors.$status" : "errors.default")
+                : (view()->exists("errors.front.$status") ? "errors.front.default" : "errors.front.default");
+
+            // $view = view()->exists("errors.$status") ? "errors.$status" : "errors.default";
+// dd($view);
+            return response()->view($view, [
+                'message' => $e->getMessage()
+            ], $status);
         });
     })->create();

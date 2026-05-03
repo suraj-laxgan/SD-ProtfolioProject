@@ -50,14 +50,7 @@
     </main>
     @include('layout.frontend.footer')
 
-    <!-- Global AJAX CSRF Setup -->
-    <script>
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-            }
-        });
-    </script>
+    
 
     <!-- Page Specific JS -->
     @stack('scripts')

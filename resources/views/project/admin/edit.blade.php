@@ -36,12 +36,12 @@
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="technology_id" class="form-label">Technology</label>
-                                <select name="technology_id" id="technology_id"
+                                <select name="technology_id[]" id="technology_id" multiple
                                     class="select2 form-select @error('technology_id') is-invalid @enderror">
                                     <option value="">Select Technology</option>
                                    @forelse ($technologies as $technology)
                                         <option value="{{ $technology->id }}" 
-                                            {{ $data->technology_id ==  $technology->id  ? 'selected' : '' }}>
+                                            {{ $data->technologies->contains('id', $technology->id)  ? 'selected' : '' }}>
                                             {{ $technology->name }}</option>
                                     @empty
                                         <option value="">Technology Not found</option>
@@ -49,21 +49,6 @@
                                     @endforelse
                                 </select>
                             </div>
-                            {{-- <div class="mb-3 col-md-6">
-                                <label for="technology_id" class="form-label">Technology</label>
-                                <select name="technology_id[]" id="technology_id" multiple
-                                    class="select2 form-select @error('technology_id') is-invalid @enderror">
-
-                                    @forelse ($technologies as $technology)
-                                        <option value="{{ $technology->id }}"
-                                            {{ in_array($technology->id, old('technology_id', [])) ? 'selected' : '' }}>
-                                            {{ $technology->name }}
-                                        </option>
-                                    @empty
-                                        <option value="" disabled>Technology Not found</option>
-                                    @endforelse
-                                </select>
-                            </div> --}}
 
                             <div class="mb-3 col-md-6">
                                 <label for="github_link" class="form-label">Github Link</label>

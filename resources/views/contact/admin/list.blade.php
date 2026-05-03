@@ -5,38 +5,34 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            @include('education.admin.nav')
+            @include('contact.admin.nav')
             <div class="card">
                 <div class="table-responsive text-nowrap">
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Degree</th>
-                                <th>Study Field</th>
-                                <th>Institution</th>
-                                <th>Location</th>
-                                <th>Start Date</th>
-                                <th>End Date</th>
-                                <th>Grade</th>
-                                <th>Description</th>
+                                <th>Date</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Subject</th>
+                                <th>Message</th>
+                                <th>Status</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody class="table-border-bottom-0">
                             @forelse ($lists as $l)
                                 <tr class="{{ session('updated_id') == (string) $l->id ? 'active-row' : '' }}">
+                                    <td>{{ $l->created_at }}</td>
                                     <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>
-                                            {{ $l->degree }} </strong></td>
-                                    <td>{{ str($l->field_of_study)->limit(15) }}</td>
-                                    <td>{{ str($l->institution)->limit(15) }}</td>
-                                    <td>{{ str($l->location)->limit(15) }}</td>
-                                    <td>{{ $l->start_year }}</td>
-                                    <td>{{ $l->end_year }}</td>
-                                    <td>{{ $l->grade }}</td>
-                                    <td>{{ str($l->description)->limit(10) }}</td>
+                                            {{ $l->name }} </strong></td>
+                                    <td>{{ str($l->email)->limit(15) }}</td>
+                                    <td>{{ str($l->subject)->limit(15) }}</td>
+                                    <td>{{ str($l->message)->limit(15) }}</td>
+                                    <td>{{ $l->is_read == 1 ? "Seen" : "Unseen"}}</td>
                                     <td>
                                         <a
-                                            href="{{ route('education.edit', [encrypt($l->id), 'page' => $lists->currentPage()]) }}"><i
+                                            href="{{ route('contact.edit', [encrypt($l->id), 'page' => $lists->currentPage()]) }}"><i
                                                 class="bx bx-edit-alt me-1"></i>Edit</a>
                                     </td>
                                 </tr>

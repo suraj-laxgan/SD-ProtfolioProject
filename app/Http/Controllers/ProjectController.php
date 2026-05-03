@@ -13,7 +13,7 @@ use Exception;
 class ProjectController extends Controller
 {
     protected $projectService;
-        protected $projectCategoryService;
+    protected $projectCategoryService;
     protected $projectTechnologyService;
 
 
@@ -22,7 +22,6 @@ class ProjectController extends Controller
         $this->projectService = $projectService;
         $this->projectCategoryService = $projectCategoryService;
         $this->projectTechnologyService = $projectTechnologyService;
-
     }
     /**
      * Display a listing of the resource.
@@ -32,14 +31,14 @@ class ProjectController extends Controller
         $skills = $this->projectService->FindList();
         return view('project.admin.list', ['lists' => $skills]);
     }
- /**
+    /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
         $technologies = $this->projectTechnologyService->FindList();
         $categories = $this->projectCategoryService->FindList();
-        return view('project.admin.create',['technologies' => $technologies, 'categories' => $categories]);
+        return view('project.admin.create', ['technologies' => $technologies, 'categories' => $categories]);
     }
 
     /**
@@ -70,7 +69,7 @@ class ProjectController extends Controller
             $technologies = $this->projectTechnologyService->FindList();
             $categories = $this->projectCategoryService->FindList();
             $page = $request->query('page', 1);
-            return view('project.admin.edit', compact('data' , 'technologies', 'categories','page'));
+            return view('project.admin.edit', compact('data', 'technologies', 'categories', 'page'));
         } catch (Exception $e) {
             abort(404);
         }
@@ -85,7 +84,7 @@ class ProjectController extends Controller
             $data = $request->validated();
             $this->projectService->Update($request->id, $data);
             $page = $request->page  ??  1;
-            return Redirect::route('project.index', ['page' => $page]) 
+            return Redirect::route('project.index', ['page' => $page])
                 ->with('success', 'Project updated Successfully')
                 ->with('updated_id', $request->id);
         } catch (\Throwable $th) {

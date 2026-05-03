@@ -31,21 +31,7 @@
                                     @endforelse
                                 </select>
                             </div>
-                            {{-- <div class="mb-3 col-md-6">
-                                <label for="technology_id" class="form-label">Technology</label>
-                                <select name="technology_id" id="technology_id" 
-                                    class="select2 form-select @error('technology_id') is-invalid @enderror">
-                                    <option value="">Select Technology</option>
-                                   @forelse ($technologies as $technology)
-                                        <option value="{{ $technology->id }}" 
-                                            {{ old('technology_id') ==  $technology->id  ? 'selected' : '' }}>
-                                            {{ $technology->name }}</option>
-                                    @empty
-                                        <option value="">Technology Not found</option>
-                                        
-                                    @endforelse
-                                </select>
-                            </div> --}}
+                            
                             <div class="mb-3 col-md-6">
                                 <label for="technology_id" class="form-label">Technology</label>
                                 <select name="technology_id[]" id="technology_id" multiple

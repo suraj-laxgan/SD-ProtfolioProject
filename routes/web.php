@@ -18,7 +18,8 @@ use App\Http\Controllers\ContactController;
  *  Frontend route list :
 */
 
-    Route::get('/', [FrondEndDisplayController::class, 'index'])->name('insex');
+    Route::get('/', [FrondEndDisplayController::class, 'index'])->name('index');
+    Route::POST('/auth/contact/store', [ContactController::class, 'store'])->name('contact.store');
 
 
 
@@ -26,11 +27,11 @@ use App\Http\Controllers\ContactController;
  *  Admin Dashboard route list :
  */
 
-    Route::get('/dashboard', function () {
+    Route::get('/auth/dashboard', function () {
             return view('dashboard');
     })->middleware(['auth', 'verified'])->name('dashboard');
 
-    Route::middleware('auth')->group(function () {
+    Route::prefix('auth')->middleware('auth')->group(function () {
         /*
             User Profile route :
         */
@@ -117,12 +118,12 @@ use App\Http\Controllers\ContactController;
             Route::patch('/project/update', [ProjectController::class, 'update'])->name('project.update');
             Route::delete('/project/delete/{id}', [ProjectController::class, 'delete'])->name('project.delete');
 
-            Route::get('/project-image/index', [ProjectImageController::class, 'index'])->name('project_image.index');
-            Route::get('/project-image/create', [ProjectImageController::class, 'create'])->name('project_image.create');
-            Route::post('/project-image/store', [ProjectImageController::class, 'store'])->name('project_image.store');
-            Route::get('/project-image/edit/{id}', [ProjectImageController::class, 'edit'])->name('project_image.edit');
-            Route::patch('/project-image/update', [ProjectImageController::class, 'update'])->name('project_image.update');
-            Route::delete('/project-image/delete/{id}', [ProjectImageController::class, 'delete'])->name('project_image.delete');
+            // Route::get('/project-image/index', [ProjectImageController::class, 'index'])->name('project_image.index');
+            // Route::get('/project-image/create', [ProjectImageController::class, 'create'])->name('project_image.create');
+            // Route::post('/project-image/store', [ProjectImageController::class, 'store'])->name('project_image.store');
+            // Route::get('/project-image/edit/{id}', [ProjectImageController::class, 'edit'])->name('project_image.edit');
+            // Route::patch('/project-image/update', [ProjectImageController::class, 'update'])->name('project_image.update');
+            // Route::delete('/project-image/delete/{id}', [ProjectImageController::class, 'delete'])->name('project_image.delete');
 
 
 
@@ -132,6 +133,9 @@ use App\Http\Controllers\ContactController;
         */
             Route::get('/contact/index', [ContactController::class, 'index'])->name('contact.index');
             Route::delete('/contact/delete/{id}', [ContactController::class, 'delete'])->name('contact.delete');
+            Route::get('/contact/edit/{id}', [ContactController::class, 'edit'])->name('contact.edit');
+            Route::patch('/contact/update', [ContactController::class, 'update'])->name('contact.update');
+
 
 
         /*

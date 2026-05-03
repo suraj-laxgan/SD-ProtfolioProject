@@ -15,9 +15,10 @@
                                 <th>Slug</th>
                                 <th>Category</th>
                                 <th>Technology</th>
-                                <th>Github</th>
-                                <th>URL</th>
+                                {{-- <th>Github</th>
+                                <th>URL</th> --}}
                                 <th>status</th>
+                                 <th>Description</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -28,11 +29,13 @@
                                             {{ $l->title }} </strong></td>
                                     <td>{{ $l->slug }}</td>
                                     <td>{{ $l->getCategory->name }}</td>
-                                    <td>{{ $l->technology_id }}</td>
-                                    <td>{{ $l->github_link }}</td>
-                                    <td>{{ $l->live_url }}</td>
-                                    <td>{{ $l->status }}</td>
-                                    {{-- <td>{{ str($l->description)->limit(10) }}</td> --}}
+                                    <td>
+                                        {{ $l->technologies->pluck('name')->join(', ') }}
+                                    </td>
+                                    {{-- <td>{{ $l->github_link }}</td>
+                                    <td>{{ $l->live_url }}</td> --}}
+                                    <td>{{ $l->status == 1 ? 'Active' : 'Inactive'}}</td>
+                                    <td>{{ str($l->description)->limit(10) }}</td>
                                     <td>
                                         <a
                                             href="{{ route('project.edit', [encrypt($l->id), 'page' => $lists->currentPage()]) }}"><i
@@ -41,7 +44,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="8" class="text-center">
+                                    <td colspan="7" class="text-center">
                                         <div class="p-4">
                                             <p class="text-muted">No data found in the table.</p>
                                         </div>

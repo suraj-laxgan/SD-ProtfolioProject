@@ -25,6 +25,17 @@
 <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
         class="bi bi-arrow-up-short"></i></a>
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+<!-- Global AJAX CSRF Setup -->
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            }
+        });
+    </script>
+
 <!-- Vendor JS Files -->
 <script src="{{ asset('frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('frontend/assets/vendor/php-email-form/validate.js') }}"></script>
