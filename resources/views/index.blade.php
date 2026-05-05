@@ -1,7 +1,7 @@
 @extends('layout.frontend.app')
-@section('title', 'Dashboard Home | SD')
-@section('meta_description', 'SD Dashboard home')
-@section('meta_keywords', 'SD Dashboard home.')
+@section('title', 'Suraj Das | SD')
+@section('meta_description', 'Suraj Das')
+@section('meta_keywords', 'Suraj Das')
 @section('content')
     <!-- Hero Section -->
     @include('layout.frontend.hero')

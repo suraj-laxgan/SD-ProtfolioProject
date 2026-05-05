@@ -4,8 +4,8 @@
 
         <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
             <!-- Uncomment the line below if you also wish to use an image logo -->
-            <img src="{{ asset('frontend/assets/img/logo.webp') }} " alt="">
-            <h1 class="sitename">EasyFolio</h1>
+            <img src="{{ asset('images/logo.png') }}" class="w-48 h-auto" alt="Logo">
+            <h1 class="sitename">{{ $profiles->name }}</h1>
         </a>
 
         <nav id="navmenu" class="navmenu">
@@ -21,10 +21,13 @@
         </nav>
 
         <div class="header-social-links">
-            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+            {{-- <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
             <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a> --}}
+            <a href="{{ $profiles->linkedin_url }}" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-linkedin"></i>
+            </a>
+
         </div>
 
     </div>

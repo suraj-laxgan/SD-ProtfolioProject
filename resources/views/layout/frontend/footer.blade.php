@@ -2,17 +2,23 @@
 
     <div class="container">
         <div class="copyright text-center ">
-            <p>© <span>Copyright</span> <strong class="px-1 sitename">EasyFolio</strong> <span>All Rights
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">{{ $profiles->name }}</strong> <span>All Rights
                     Reserved</span></p>
         </div>
         <div class="social-links d-flex justify-content-center">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
+            {{-- <a href=""><i class="bi bi-twitter-x"></i></a>
             <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a> --}}
+            {{-- <a href={{ $profiles->linkedin_url }}><i class="bi bi-linkedin"></i></a> --}}
+            <a href="{{ $profiles->linkedin_url }}" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-linkedin"></i>
+            </a>
+             <a href="{{ $profiles->linkedin_url }}" target="_blank" rel="noopener noreferrer">
+               <i class="bi bi-github"></i>
+            </a>
         </div>
         <div class="credits">
-            Designed by <a href="#">Suraj Dsa</a> | <a href="#">Suraj</a>
+            Designed by <a href="#">{{ $profiles->name }}</a> | <a href="#">{{ $profiles->name }}</a>
         </div>
     </div>
 
@@ -21,6 +27,17 @@
 <!-- Scroll Top -->
 <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
         class="bi bi-arrow-up-short"></i></a>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+<!-- Global AJAX CSRF Setup -->
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            }
+        });
+    </script>
 
 <!-- Vendor JS Files -->
 <script src="{{ asset('frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
