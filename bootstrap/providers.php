@@ -5,6 +5,7 @@ return [
     App\Providers\ContactServiceProvider::class,
     App\Providers\EducationServiceProvider::class,
     App\Providers\ExprenceServiceProvider::class,
+    App\Providers\MailEventServiceProvider::class,
     App\Providers\ProjectCategoryServiceProvider::class,
     App\Providers\ProjectImageServiceProvider::class,
     App\Providers\ProjectServiceProvider::class,

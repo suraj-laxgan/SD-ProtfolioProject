@@ -8,8 +8,7 @@
                          stroke-width="2"></path>
                  </svg>
              </div>
-             <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur
-                 vel illum qui dolorem</p>
+             <p>{{$profiles->protfolio_header}}</p>
          </div><!-- End Section Title -->
 
          <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -19,67 +18,65 @@
                  <div class="portfolio-filters-container" data-aos="fade-up" data-aos-delay="200">
                      <ul class="portfolio-filters isotope-filters">
                          <li data-filter="*" class="filter-active">All Work</li>
-                         <li data-filter=".filter-web">Web Design</li>
-                         <li data-filter=".filter-graphics">Graphics</li>
-                         <li data-filter=".filter-motion">Motion</li>
-                         <li data-filter=".filter-brand">Branding</li>
+                         @forelse ($projectcategories as $projectcategory)
+                             <li data-filter=.{{ $projectcategory->name }}>{{ $projectcategory->name }}</li>
+                         @empty
+                         @endforelse
                      </ul>
                  </div>
 
                  <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
 
-                     <div class="col-lg-3 col-md-3 portfolio-item isotope-item filter-web">
-                         <div class="portfolio-card">
-                             
-                             <div class="portfolio-content">
-                                 <span class="category">Web Design</span>
-                                 <h3>Modern Dashboard Interface</h3>
-                                 <p>Maecenas faucibus mollis interdum sed posuere consectetur est at lobortis.</p>
-                             </div>
-                         </div>
-                     </div><!-- End Portfolio Item -->
+                     @forelse ($projects as $project)
+                         <div class="col-lg-3 col-md-3 portfolio-item isotope-item {{ $project->getCategory->name }}">
+                             <div class="portfolio-card">
 
-                     <div class="col-lg-3 col-md-3 portfolio-item isotope-item filter-graphics">
-                         <div class="portfolio-card">
-                            
-                             <div class="portfolio-content">
-                                 <span class="category">Graphics</span>
-                                 <h3>Creative Brand Identity</h3>
-                                 <p>Vestibulum id ligula porta felis euismod semper at vulputate.</p>
-                             </div>
-                         </div>
-                     </div><!-- End Portfolio Item -->
+                                 <div class="portfolio-content">
+                                     <span class="category">{{ $project->getCategory->name }}</span>
+                                     <h3>{{ $project->title }}</h3>
+                                     <p>{!! nl2br(e($project->description)) !!}</p>
+                                     <div style="padding: 10px">
+                                         <ul class="technology-pills">
+                                             @foreach ($project->technologies as $technology)
+                                                 <li>{{ $technology->name }}</li>
+                                             @endforeach
+                                         </ul>
+                                     </div>
+                                 </div>
 
-                     <div class="col-lg-3 col-md-3 portfolio-item isotope-item filter-motion">
-                         <div class="portfolio-card">
-                             
-                             <div class="portfolio-content">
-                                 <span class="category">Motion</span>
-                                 <h3>Product Animation Reel</h3>
-                                 <p>Donec ullamcorper nulla non metus auctor fringilla dapibus.</p>
                              </div>
-                         </div>
-                     </div>
-                     <!-- End Portfolio Item -->
+                         </div><!-- End Portfolio Item -->
+                     @empty
+                     @endforelse
 
-                     <div class="col-lg-3 col-md-3 portfolio-item isotope-item filter-brand">
-                         <div class="portfolio-card">
-                            
-                             <div class="portfolio-content">
-                                 <span class="category">Branding</span>
-                                 <h3>Luxury Brand Package</h3>
-                                 <p>Aenean lacinia bibendum nulla sed consectetur elit.</p>
+                     {{-- @forelse ($projects as $project)
+                         <div
+                             class="col-lg-3 col-md-6 mb-4 portfolio-item isotope-item {{ $project->getCategory->name }}">
+                             <div class="portfolio-card h-100 d-flex flex-column">
+                                 <div class="portfolio-content d-flex flex-column flex-grow-1">
+                                     <span class="category text-muted small">{{ $project->getCategory->name }}</span>
+                                     <h3 class="mt-2">{{ $project->title }}</h3>
+
+                                     <!-- Description with limit -->
+                                     <p class="description-text flex-grow-1">
+                                         {{ Str::limit($project->description, 120) }}
+                                     </p>
+
+                                     <div class="mt-auto">
+                                         <ul class="technology-pills">
+                                             @foreach ($project->technologies as $technology)
+                                                 <li>{{ $technology->name }}</li>
+                                             @endforeach
+                                         </ul>
+                                     </div>
+                                 </div>
                              </div>
                          </div>
-                     </div><!-- End Portfolio Item -->
+                     @empty
+                         <p>No projects found.</p>
+                     @endforelse --}}
 
                  </div><!-- End Portfolio Container -->
-
-                 <a href="#" class="btn btn-outline-primary">See all Portfolio</a>
-
-
              </div>
-
          </div>
-
      </section>

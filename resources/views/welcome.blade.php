@@ -7,13 +7,13 @@
         /* The main 12-column container for skill*/
 
         /* .skills-master-container {
-                    border: 2px solid #e0e0e0;
-                    border-radius: 25px;
-                    overflow: hidden;
-                    padding: 40px;
-                    background: #ffffff;
-                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-                } */
+                            border: 2px solid #e0e0e0;
+                            border-radius: 25px;
+                            overflow: hidden;
+                            padding: 40px;
+                            background: #ffffff;
+                            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+                        } */
 
         .skill-category-card {
             background: #ffffff;
@@ -76,11 +76,34 @@
             border-color: #e87532;
             cursor: default;
         }
+
+
+
+
+        /* Project css */
+        /* Ensure the card container allows equal height columns */
+
+        /* Horizontal pills for skills */
+        .technology-pills {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .technology-pills li {
+            background: #f0f0f0;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
     </style>
 @endpush
 @section('content')
     @include('layout.admin.alerts')
-    
+
     <!-- Hero Section -->
     @include('layout.frontend.hero')
     <!-- /Hero Section -->

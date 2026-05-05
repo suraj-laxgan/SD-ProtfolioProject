@@ -31,6 +31,7 @@
                                 <input class="form-control @error('start_date') is-invalid @enderror"
                                     value="{{ $experience->start_date }}" type="date" id="start_date" name="start_date"
                                     autofocus />
+                                    {{-- @dd($experience->start_date) --}}
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="end_date" class="form-label">End Date</label>

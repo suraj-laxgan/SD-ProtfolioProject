@@ -20,15 +20,15 @@
                             <span>+91{{ $profiles->phone }}</span>
                         </div>
 
-                        <div class="info-item d-flex mb-4">
+                        {{-- <div class="info-item d-flex mb-4">
                             <i class="bi bi-geo-alt me-3"></i>
                             <span>{{ $profiles->contact_address }}</span>
-                        </div>
+                        </div> --}}
 
-                        <a href="#" class="map-link d-inline-flex align-items-center">
+                        {{-- <a href="#" class="map-link d-inline-flex align-items-center">
                             Open Map
                             <i class="bi bi-arrow-right ms-2"></i>
-                        </a>
+                        </a> --}}
                     </div>
                 </div>
             </div>
@@ -111,7 +111,7 @@
 </section>
 @push('scripts')
     {{-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> --}}
-    <script>
+    {{-- <script>
         $('#contactForm').on('submit', function(e) {
             e.preventDefault();
 
@@ -133,5 +133,5 @@
                 }
             });
         });
-    </script>
+    </script> --}}
 @endpush

@@ -13,6 +13,9 @@
             <a href="{{ $profiles->linkedin_url }}" target="_blank" rel="noopener noreferrer">
                 <i class="bi bi-linkedin"></i>
             </a>
+             <a href="{{ $profiles->linkedin_url }}" target="_blank" rel="noopener noreferrer">
+               <i class="bi bi-github"></i>
+            </a>
         </div>
         <div class="credits">
             Designed by <a href="#">{{ $profiles->name }}</a> | <a href="#">{{ $profiles->name }}</a>

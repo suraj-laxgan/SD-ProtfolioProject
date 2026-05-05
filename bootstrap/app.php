@@ -63,12 +63,11 @@ return Application::configure(basePath: dirname(__DIR__))
             $isAdmin = request()->is('auth/*');
             $view = $isAdmin
                 ? (view()->exists("errors.$status") ? "errors.$status" : "errors.default")
-                : (view()->exists("errors.front.$status") ? "errors.front.default" : "errors.front.default");
+                : (view()->exists("errors.front.$status") ? "errors.front.$status" : "errors.front.default");
 
             // $view = view()->exists("errors.$status") ? "errors.$status" : "errors.default";
-// dd($view);
-            return response()->view($view, [
-                'message' => $e->getMessage()
-            ], $status);
+            // return response()->view($view, [
+            //     'message' => $e->getMessage()
+            // ], $status);
         });
     })->create();

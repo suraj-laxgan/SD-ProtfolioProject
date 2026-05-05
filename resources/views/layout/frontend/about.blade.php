@@ -31,10 +31,11 @@
 
                      <p class="lead mb-4">{{$profiles->about_subtitle}}</p>
 
-                     <p class="mb-4">{{$profiles->about_description}}</p>
+                     <p class="mb-4">{!! nl2br(e($profiles->about_description)) !!}</p>
+                        
                  </div>
              </div>
-             <div class="personal-info">
+             {{-- <div class="personal-info">
                  <div class="row g-4">
                      <div class="col-6">
                          <div class="info-item">
@@ -78,7 +79,7 @@
                          </div>
                      </div>
                  </div>
-             </div>
+             </div> --}}
          </div>
 
      </div>

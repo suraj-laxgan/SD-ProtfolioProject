@@ -24,9 +24,10 @@
             {{-- <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
             <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
             <a href="#" class="instagram"><i class="bi bi-instagram"></i></a> --}}
-             <a href="{{ $profiles->linkedin_url }}" target="_blank" rel="noopener noreferrer">
+            <a href="{{ $profiles->linkedin_url }}" target="_blank" rel="noopener noreferrer">
                 <i class="bi bi-linkedin"></i>
             </a>
+
         </div>
 
     </div>
